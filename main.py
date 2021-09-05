@@ -197,6 +197,7 @@ class MyMainWindow(QtGui.QMainWindow, main_designer2.Ui_MainWindow):
         # inicializamos el semaforo a rojo
         self.color_semaforo(1)
 
+        
         # establecemos la barra de status
         # cadena = "Patient Id: " + patient_id + "   " + "Session Id: " + session_id
         # self.statusBar.showMessage(cadena)
@@ -225,7 +226,7 @@ class MyMainWindow(QtGui.QMainWindow, main_designer2.Ui_MainWindow):
         # Menu de la ventana
 
         # ventana About
-       # self.actionAbout_this_app.triggered.connect(self.open_window_about)
+        # self.actionAbout_this_app.triggered.connect(self.open_window_about)
 
 
         # connect
@@ -246,9 +247,8 @@ class MyMainWindow(QtGui.QMainWindow, main_designer2.Ui_MainWindow):
         self.pause_button.clicked.connect(self.on_pause_button)
 
         #start 
-           # pause
         self.start_button_record.setCheckable(True)
-        self.start_button_record.clicked.connect(self.on_pause_button)
+        self.start_button_record.clicked.connect(self.on_start_recording)
 
         # eda
         self.eda_button.setCheckable(True)
@@ -479,12 +479,27 @@ class MyMainWindow(QtGui.QMainWindow, main_designer2.Ui_MainWindow):
             self.queue2.put('pausa_off')
             self.pause_button.setStyleSheet("color: white; background-color: rgb(128,128,128)")
 
+
+        ####################################################################################
+        # CREACION DEL DIRECTORIO DE GUARDADO
+        ##################################################################################################
+    def dir_folder_create(self):
+        if not os.path.exists('Sesiones'):
+            os.mkdir("Sesiones",0o777)
+            print ("Creacion de los ficheros")
+        else:
+            print("No se ha creado la carpeta")
+
+
+
 ###############################################################################################################################
 #Creacion de la funcion de guardado de los datos 
 ###############################################################################################################################
-    def on_start(self):
+    def on_start_recording(self):
         if self.status_button.isChecked():
             self.setStyleSheet("color: black")
+            self.dir_folder_create()
+
         else:
             self.start_button_record.setStyleSheet("color: white; background-color: rgb(128,128,128)")
 
@@ -703,6 +718,11 @@ class MyMainWindow(QtGui.QMainWindow, main_designer2.Ui_MainWindow):
         contador=contador+1
         self.EVE_value.setText(str(contador))
         print(contador)
+
+    def write_data(self, filename, data):
+        pass
+
+
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
