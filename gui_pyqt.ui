@@ -548,6 +548,83 @@
       </property>
       <layout class="QGridLayout" name="gridLayout_6">
        <item row="5" column="0">
+        <widget class="QGroupBox" name="groupBox_4">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>200</width>
+           <height>75</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="title">
+          <string>Participante</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_18">
+          <item row="0" column="0">
+           <layout class="QGridLayout" name="gridLayout_3">
+            <property name="sizeConstraint">
+             <enum>QLayout::SetFixedSize</enum>
+            </property>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_29">
+              <property name="maximumSize">
+               <size>
+                <width>45</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>11</pointsize>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>ID</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QPlainTextEdit" name="id_participante">
+              <property name="minimumSize">
+               <size>
+                <width>140</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>80</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="3" column="0">
         <widget class="QGroupBox" name="groupBox_11">
          <property name="minimumSize">
           <size>
@@ -644,7 +721,170 @@
          </layout>
         </widget>
        </item>
+       <item row="8" column="0">
+        <widget class="QGroupBox" name="groupBox_10">
+         <property name="minimumSize">
+          <size>
+           <width>200</width>
+           <height>95</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>161</width>
+           <height>111</height>
+          </size>
+         </property>
+         <property name="title">
+          <string>Adquisición de datos</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_10">
+          <item row="0" column="0">
+           <layout class="QGridLayout" name="gridLayout_7">
+            <item row="0" column="0">
+             <widget class="QPushButton" name="start_button_record">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Start recording</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="pause_button">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Pause</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
        <item row="2" column="0">
+        <widget class="QGroupBox" name="groupBox">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="title">
+          <string>Todos los canales</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_11">
+          <item row="0" column="0">
+           <widget class="QPushButton" name="select_al_channels_button">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Select all channels</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="groupBox_8">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>200</width>
+           <height>111</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>161</width>
+           <height>111</height>
+          </size>
+         </property>
+         <property name="title">
+          <string>Dispositivo</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QPushButton" name="connect_button">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>140</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Connect</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="status_button">
+            <property name="minimumSize">
+             <size>
+              <width>140</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Status</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="devices_button">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>140</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Devices connected</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
         <widget class="QGroupBox" name="groupBox_9">
          <property name="minimumSize">
           <size>
@@ -1114,246 +1354,6 @@
              <bool>true</bool>
             </property>
            </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QGroupBox" name="groupBox_10">
-         <property name="minimumSize">
-          <size>
-           <width>200</width>
-           <height>95</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>161</width>
-           <height>111</height>
-          </size>
-         </property>
-         <property name="title">
-          <string>Adquisición de datos</string>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_10">
-          <item row="0" column="0">
-           <layout class="QGridLayout" name="gridLayout_7">
-            <item row="0" column="0">
-             <widget class="QPushButton" name="start_button_record">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string>Start recording</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="0">
-             <widget class="QPushButton" name="pause_button">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string>Pause</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QGroupBox" name="groupBox_8">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>200</width>
-           <height>111</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>161</width>
-           <height>111</height>
-          </size>
-         </property>
-         <property name="title">
-          <string>Dispositivo</string>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_2">
-          <item>
-           <widget class="QPushButton" name="connect_button">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>140</width>
-              <height>25</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Connect</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="status_button">
-            <property name="minimumSize">
-             <size>
-              <width>140</width>
-              <height>25</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Status</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="devices_button">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>140</width>
-              <height>25</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Devices connected</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="QGroupBox" name="groupBox">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>80</height>
-          </size>
-         </property>
-         <property name="title">
-          <string>Todos los canales</string>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_11">
-          <item row="0" column="0">
-           <widget class="QPushButton" name="select_al_channels_button">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>Select all channels</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QGroupBox" name="groupBox_4">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>200</width>
-           <height>75</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>200</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="title">
-          <string>Participante</string>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_18">
-          <item row="0" column="0">
-           <layout class="QGridLayout" name="gridLayout_3">
-            <property name="sizeConstraint">
-             <enum>QLayout::SetFixedSize</enum>
-            </property>
-            <item row="0" column="0">
-             <widget class="QLabel" name="label_29">
-              <property name="maximumSize">
-               <size>
-                <width>45</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>11</pointsize>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>ID</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="1">
-             <widget class="QPlainTextEdit" name="id_participant">
-              <property name="minimumSize">
-               <size>
-                <width>140</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>80</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>12</pointsize>
-               </font>
-              </property>
-             </widget>
-            </item>
-           </layout>
           </item>
          </layout>
         </widget>

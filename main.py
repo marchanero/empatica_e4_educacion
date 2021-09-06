@@ -1,5 +1,5 @@
 import pyqtgraph as pg
-import main_designer2
+import main_designer3
 import sys
 import multiprocessing
 from PyQt4 import QtGui, QtCore
@@ -73,7 +73,7 @@ def empaticaconnection(queue, queue2):
             connected = True
             #mac = 'B404BC' #Pulsera de Arturo
             #mac = '7E9418'  # Pulsera Rober
-            #mac = '09048A' #pulsera de Alvaro 1
+            #mac = '09048A' #pulsera de Alvaro 2
             mac = '1C14C6' #pulsera de Alvaro 1
             queue.put('R canal_comunicaciones OK\n')
             break
@@ -141,7 +141,7 @@ def empaticaconnection(queue, queue2):
 
 
 
-class MyMainWindow(QtGui.QMainWindow, main_designer2.Ui_MainWindow):
+class MyMainWindow(QtGui.QMainWindow, main_designer3.Ui_MainWindow):
     global contador
     def __init__(self, parent=None):
         global contador
@@ -212,13 +212,6 @@ class MyMainWindow(QtGui.QMainWindow, main_designer2.Ui_MainWindow):
         self.timer2.timeout.connect(self.update_params)
         self.timer2.start(2000)
 
-        # # definimos los ficheros de texto para grabar los datos
-        # self.eda_file = open(path_dir + '/' + patient_id + '_' + session_id + '_' + 'eda_data.csv', 'wb')
-        # self.bvp_file = open(path_dir + '/' + patient_id + '_' + session_id + '_' + 'bvp_data.csv', 'a')
-        # self.acc_file = open(path_dir + '/' + patient_id + '_' + session_id + '_' + 'acc_data.csv', 'wb')
-        # self.eve_file = open(path_dir + '/' + patient_id + '_' + session_id + '_' + 'eve_data.csv', 'wb')
-        # self.tmp_file = open(path_dir + '/' + patient_id + '_' + session_id + '_' + 'tmp_data.csv', 'wb')
-        # self.ibi_file = open(path_dir + '/' + patient_id + '_' + session_id + '_' + 'ibi_data.csv', 'wb')
 
         ##################################################################################
         #####################    botones y settings
@@ -480,25 +473,44 @@ class MyMainWindow(QtGui.QMainWindow, main_designer2.Ui_MainWindow):
             self.pause_button.setStyleSheet("color: white; background-color: rgb(128,128,128)")
 
 
-        ####################################################################################
-        # CREACION DEL DIRECTORIO DE GUARDADO
-        ##################################################################################################
+    ####################################################################################
+    # CREACION DEL DIRECTORIO DE GUARDADO
+    ##################################################################################################
     def dir_folder_create(self):
         if not os.path.exists('Sesiones'):
             os.mkdir("Sesiones",0o777)
-            print ("Creacion de los ficheros")
+            print ("Creacion de la carpeta Sesiones")
         else:
-            print("No se ha creado la carpeta")
+            print("No se ha creado la carpeta sesiones")
 
-
+    def create_file_in_folder(self, id_participante):
+        #definimos los ficheros de texto para grabar los datos
+        print ("Creacion de los ficheros de guardado")
+        self.eda_file = open('Sesiones' + '/' + id_participante + '_' + 'eda_data.csv', 'wb')
+        self.bvp_file = open('Sesiones' + '/' + id_participante + '_' + 'bvp_data.csv', 'a')
+        self.acc_file = open('Sesiones' + '/' + id_participante + '_' +'acc_data.csv', 'wb')
+        self.eve_file = open('Sesiones' + '/' + id_participante + '_' + 'eve_data.csv', 'wb')
+        self.tmp_file = open('Sesiones' + '/' + id_participante + '_' + 'tmp_data.csv', 'wb')
+        self.ibi_file = open('Sesiones' + '/' + id_participante + '_' + 'ibi_data.csv', 'wb')
+        
+    def write_values_in_file(self):
+        pass
 
 ###############################################################################################################################
 #Creacion de la funcion de guardado de los datos 
 ###############################################################################################################################
     def on_start_recording(self):
-        if self.status_button.isChecked():
+        if self.start_button_record.isChecked():
             self.setStyleSheet("color: black")
             self.dir_folder_create()
+            id_participante_str=self.id_participante.toPlainText()
+            print(id_participante_str)
+            self.create_file_in_folder(id_participante_str)
+            self.id_participante.setDisabled(True)
+            self.start_button_record.setText("Stop")
+            ########################################################################################################################
+            #Funcion de guardado. 
+
 
         else:
             self.start_button_record.setStyleSheet("color: white; background-color: rgb(128,128,128)")
@@ -647,7 +659,7 @@ class MyMainWindow(QtGui.QMainWindow, main_designer2.Ui_MainWindow):
         f = data[2][0:-2].replace(',', '.')
         self.eda_datay.append(float(f))  # storing eda value on eda_datay
         self.curve1.setData(x=list(self.eda_time), y=list(self.eda_datay))  # plotting
-        #self.eda_file.write(d + ';' + f + '\n')  # recording eda value on file
+        self.eda_file.write(d + ';' + f + '\n')  # recording eda value on file
 
     def update_IBI_data(self, data):
         d = data[1].replace(',', '')
@@ -657,7 +669,7 @@ class MyMainWindow(QtGui.QMainWindow, main_designer2.Ui_MainWindow):
         self.ibi_time.append(d)
         self.ibi_datay.append(float(data[2][0:-2].replace(',', '.')))
         print("Date_epoch=" + str(d) + " Valor de ib = " + data[2])
-        #self.ibi_file.write(str(d) + ';' + data[2] + '\n')
+        self.ibi_file.write(str(d) + ';' + data[2] + '\n')
         self.curve2.setData(x=list(self.ibi_time), y=list(self.ibi_datay))
 
     def update_BVP_data(self, data):
@@ -668,7 +680,7 @@ class MyMainWindow(QtGui.QMainWindow, main_designer2.Ui_MainWindow):
         f = data[2][0:-2].replace(',', '.')
         self.bvp_datay.append(float(f))
         self.curve3.setData(x=list(self.bvp_time), y=list(self.bvp_datay))
-        #self.bvp_file.write(d + ';' + f + '\n')  # recording bvp value on file
+        self.bvp_file.write(d + ';' + f + '\n')  # recording bvp value on file
 
     def update_ACC_data(self, data):
         d = data[1].replace(',', '')
@@ -684,7 +696,7 @@ class MyMainWindow(QtGui.QMainWindow, main_designer2.Ui_MainWindow):
         self.curve4.setData(x=list(self.acc_time), y=list(self.acc_datax))
         self.curve5.setData(x=list(self.acc_time), y=list(self.acc_datay))
         self.curve6.setData(x=list(self.acc_time), y=list(self.acc_dataz))
-        #self.acc_file.write(str(d) + ';' + data[2] + ';' + data[3] + ';' + data[4] + '\r')
+        self.acc_file.write(str(d) + ';' + data[2] + ';' + data[3] + ';' + data[4] + '\r')
 
     def update_TMP_data(self, data):
         d = data[1].replace(',', '')
@@ -695,7 +707,7 @@ class MyMainWindow(QtGui.QMainWindow, main_designer2.Ui_MainWindow):
         self.tmp_time.append(d)
         self.tmp_datay.append(float(data[2][0:-2].replace(',', '.')))
         self.curve7.setData(x=list(self.tmp_time), y=list(self.tmp_datay))
-        #self.tmp_file.write(str(d) + ';' + str(data[2]) + '\n')
+        self.tmp_file.write(str(d) + ';' + str(data[2]) + '\n')
 
 
     def update_EVE_data(self):
@@ -713,7 +725,7 @@ class MyMainWindow(QtGui.QMainWindow, main_designer2.Ui_MainWindow):
         self.eve_datay.append(1)
         self.eve_datay.append(0)
 
-        #self.eve_file.write(str(d) + ";" + str(contador)+'\n')
+        self.eve_file.write(str(d) + ";" + str(contador)+'\n')
         self.curve8.setData(x=list(self.eve_time), y=list(self.eve_datay))
         contador=contador+1
         self.EVE_value.setText(str(contador))

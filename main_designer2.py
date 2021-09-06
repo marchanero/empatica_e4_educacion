@@ -16,11 +16,13 @@ except AttributeError:
 
 try:
     _encoding = QtGui.QApplication.UnicodeUTF8
+
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig, _encoding)
 except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -34,7 +36,8 @@ class Ui_MainWindow(object):
         self.System_value_groupbox = QtGui.QGroupBox(self.centralwidget)
         self.System_value_groupbox.setMinimumSize(QtCore.QSize(161, 590))
         self.System_value_groupbox.setMaximumSize(QtCore.QSize(161, 16777215))
-        self.System_value_groupbox.setObjectName(_fromUtf8("System_value_groupbox"))
+        self.System_value_groupbox.setObjectName(
+            _fromUtf8("System_value_groupbox"))
         self.gridLayout_13 = QtGui.QGridLayout(self.System_value_groupbox)
         self.gridLayout_13.setObjectName(_fromUtf8("gridLayout_13"))
         self.acc_groupbox = QtGui.QGroupBox(self.System_value_groupbox)
@@ -238,10 +241,12 @@ class Ui_MainWindow(object):
         self.gridLayout_13.addWidget(self.event_groupbox, 5, 0, 1, 1)
         self.gridLayout.addWidget(self.System_value_groupbox, 0, 2, 1, 1)
         self.groupBox_2 = QtGui.QGroupBox(self.centralwidget)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Preferred)
+        sizePolicy = QtGui.QSizePolicy(
+            QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.groupBox_2.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.groupBox_2.sizePolicy().hasHeightForWidth())
         self.groupBox_2.setSizePolicy(sizePolicy)
         self.groupBox_2.setMinimumSize(QtCore.QSize(220, 0))
         self.groupBox_2.setMaximumSize(QtCore.QSize(220, 16777215))
@@ -256,50 +261,62 @@ class Ui_MainWindow(object):
         self.verticalLayout = QtGui.QVBoxLayout()
         self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
         self.eda_button = QtGui.QPushButton(self.groupBox_11)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Preferred)
+        sizePolicy = QtGui.QSizePolicy(
+            QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.eda_button.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.eda_button.sizePolicy().hasHeightForWidth())
         self.eda_button.setSizePolicy(sizePolicy)
         self.eda_button.setObjectName(_fromUtf8("eda_button"))
         self.verticalLayout.addWidget(self.eda_button)
         self.bvp_button = QtGui.QPushButton(self.groupBox_11)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Preferred)
+        sizePolicy = QtGui.QSizePolicy(
+            QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.bvp_button.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.bvp_button.sizePolicy().hasHeightForWidth())
         self.bvp_button.setSizePolicy(sizePolicy)
         self.bvp_button.setObjectName(_fromUtf8("bvp_button"))
         self.verticalLayout.addWidget(self.bvp_button)
         self.ibi_button = QtGui.QPushButton(self.groupBox_11)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Preferred)
+        sizePolicy = QtGui.QSizePolicy(
+            QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.ibi_button.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.ibi_button.sizePolicy().hasHeightForWidth())
         self.ibi_button.setSizePolicy(sizePolicy)
         self.ibi_button.setObjectName(_fromUtf8("ibi_button"))
         self.verticalLayout.addWidget(self.ibi_button)
         self.acc_button = QtGui.QPushButton(self.groupBox_11)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Preferred)
+        sizePolicy = QtGui.QSizePolicy(
+            QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.acc_button.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.acc_button.sizePolicy().hasHeightForWidth())
         self.acc_button.setSizePolicy(sizePolicy)
         self.acc_button.setObjectName(_fromUtf8("acc_button"))
         self.verticalLayout.addWidget(self.acc_button)
         self.tmp_button = QtGui.QPushButton(self.groupBox_11)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Preferred)
+        sizePolicy = QtGui.QSizePolicy(
+            QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.tmp_button.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.tmp_button.sizePolicy().hasHeightForWidth())
         self.tmp_button.setSizePolicy(sizePolicy)
         self.tmp_button.setObjectName(_fromUtf8("tmp_button"))
         self.verticalLayout.addWidget(self.tmp_button)
         self.event_button = QtGui.QPushButton(self.groupBox_11)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Preferred)
+        sizePolicy = QtGui.QSizePolicy(
+            QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.event_button.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.event_button.sizePolicy().hasHeightForWidth())
         self.event_button.setSizePolicy(sizePolicy)
         self.event_button.setObjectName(_fromUtf8("event_button"))
         self.verticalLayout.addWidget(self.event_button)
@@ -317,7 +334,8 @@ class Ui_MainWindow(object):
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.WindowText, brush)
+        palette.setBrush(QtGui.QPalette.Active,
+                         QtGui.QPalette.WindowText, brush)
         brush = QtGui.QBrush(QtGui.QColor(173, 173, 173))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Button, brush)
@@ -338,10 +356,12 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Text, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.BrightText, brush)
+        palette.setBrush(QtGui.QPalette.Active,
+                         QtGui.QPalette.BrightText, brush)
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.ButtonText, brush)
+        palette.setBrush(QtGui.QPalette.Active,
+                         QtGui.QPalette.ButtonText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Base, brush)
@@ -353,16 +373,20 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Shadow, brush)
         brush = QtGui.QBrush(QtGui.QColor(214, 214, 214))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.AlternateBase, brush)
+        palette.setBrush(QtGui.QPalette.Active,
+                         QtGui.QPalette.AlternateBase, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 220))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.ToolTipBase, brush)
+        palette.setBrush(QtGui.QPalette.Active,
+                         QtGui.QPalette.ToolTipBase, brush)
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.ToolTipText, brush)
+        palette.setBrush(QtGui.QPalette.Active,
+                         QtGui.QPalette.ToolTipText, brush)
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.WindowText, brush)
+        palette.setBrush(QtGui.QPalette.Inactive,
+                         QtGui.QPalette.WindowText, brush)
         brush = QtGui.QBrush(QtGui.QColor(173, 173, 173))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Button, brush)
@@ -371,7 +395,8 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Light, brush)
         brush = QtGui.QBrush(QtGui.QColor(214, 214, 214))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Midlight, brush)
+        palette.setBrush(QtGui.QPalette.Inactive,
+                         QtGui.QPalette.Midlight, brush)
         brush = QtGui.QBrush(QtGui.QColor(86, 86, 86))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Dark, brush)
@@ -383,10 +408,12 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Text, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.BrightText, brush)
+        palette.setBrush(QtGui.QPalette.Inactive,
+                         QtGui.QPalette.BrightText, brush)
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ButtonText, brush)
+        palette.setBrush(QtGui.QPalette.Inactive,
+                         QtGui.QPalette.ButtonText, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Base, brush)
@@ -398,16 +425,20 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Shadow, brush)
         brush = QtGui.QBrush(QtGui.QColor(214, 214, 214))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.AlternateBase, brush)
+        palette.setBrush(QtGui.QPalette.Inactive,
+                         QtGui.QPalette.AlternateBase, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 220))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ToolTipBase, brush)
+        palette.setBrush(QtGui.QPalette.Inactive,
+                         QtGui.QPalette.ToolTipBase, brush)
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ToolTipText, brush)
+        palette.setBrush(QtGui.QPalette.Inactive,
+                         QtGui.QPalette.ToolTipText, brush)
         brush = QtGui.QBrush(QtGui.QColor(86, 86, 86))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.WindowText, brush)
+        palette.setBrush(QtGui.QPalette.Disabled,
+                         QtGui.QPalette.WindowText, brush)
         brush = QtGui.QBrush(QtGui.QColor(173, 173, 173))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Button, brush)
@@ -416,7 +447,8 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Light, brush)
         brush = QtGui.QBrush(QtGui.QColor(214, 214, 214))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Midlight, brush)
+        palette.setBrush(QtGui.QPalette.Disabled,
+                         QtGui.QPalette.Midlight, brush)
         brush = QtGui.QBrush(QtGui.QColor(86, 86, 86))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Dark, brush)
@@ -428,10 +460,12 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Text, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.BrightText, brush)
+        palette.setBrush(QtGui.QPalette.Disabled,
+                         QtGui.QPalette.BrightText, brush)
         brush = QtGui.QBrush(QtGui.QColor(86, 86, 86))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ButtonText, brush)
+        palette.setBrush(QtGui.QPalette.Disabled,
+                         QtGui.QPalette.ButtonText, brush)
         brush = QtGui.QBrush(QtGui.QColor(173, 173, 173))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Base, brush)
@@ -443,13 +477,16 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Shadow, brush)
         brush = QtGui.QBrush(QtGui.QColor(173, 173, 173))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.AlternateBase, brush)
+        palette.setBrush(QtGui.QPalette.Disabled,
+                         QtGui.QPalette.AlternateBase, brush)
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 220))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ToolTipBase, brush)
+        palette.setBrush(QtGui.QPalette.Disabled,
+                         QtGui.QPalette.ToolTipBase, brush)
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ToolTipText, brush)
+        palette.setBrush(QtGui.QPalette.Disabled,
+                         QtGui.QPalette.ToolTipText, brush)
         self.semaforo_widget.setPalette(palette)
         self.semaforo_widget.setAutoFillBackground(True)
         self.semaforo_widget.setObjectName(_fromUtf8("semaforo_widget"))
@@ -471,28 +508,35 @@ class Ui_MainWindow(object):
         self.gridLayout_7 = QtGui.QGridLayout()
         self.gridLayout_7.setObjectName(_fromUtf8("gridLayout_7"))
         self.start_button_record = QtGui.QPushButton(self.groupBox_10)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Preferred)
+        sizePolicy = QtGui.QSizePolicy(
+            QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.start_button_record.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.start_button_record.sizePolicy().hasHeightForWidth())
         self.start_button_record.setSizePolicy(sizePolicy)
-        self.start_button_record.setObjectName(_fromUtf8("start_button_record"))
+        self.start_button_record.setObjectName(
+            _fromUtf8("start_button_record"))
         self.gridLayout_7.addWidget(self.start_button_record, 0, 0, 1, 1)
         self.pause_button = QtGui.QPushButton(self.groupBox_10)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Preferred)
+        sizePolicy = QtGui.QSizePolicy(
+            QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.pause_button.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.pause_button.sizePolicy().hasHeightForWidth())
         self.pause_button.setSizePolicy(sizePolicy)
         self.pause_button.setObjectName(_fromUtf8("pause_button"))
         self.gridLayout_7.addWidget(self.pause_button, 1, 0, 1, 1)
         self.gridLayout_10.addLayout(self.gridLayout_7, 0, 0, 1, 1)
         self.gridLayout_6.addWidget(self.groupBox_10, 3, 0, 1, 1)
         self.groupBox_8 = QtGui.QGroupBox(self.groupBox_2)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.MinimumExpanding)
+        sizePolicy = QtGui.QSizePolicy(
+            QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.MinimumExpanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.groupBox_8.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.groupBox_8.sizePolicy().hasHeightForWidth())
         self.groupBox_8.setSizePolicy(sizePolicy)
         self.groupBox_8.setMinimumSize(QtCore.QSize(200, 111))
         self.groupBox_8.setMaximumSize(QtCore.QSize(161, 111))
@@ -500,10 +544,12 @@ class Ui_MainWindow(object):
         self.verticalLayout_2 = QtGui.QVBoxLayout(self.groupBox_8)
         self.verticalLayout_2.setObjectName(_fromUtf8("verticalLayout_2"))
         self.connect_button = QtGui.QPushButton(self.groupBox_8)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
+        sizePolicy = QtGui.QSizePolicy(
+            QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.connect_button.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.connect_button.sizePolicy().hasHeightForWidth())
         self.connect_button.setSizePolicy(sizePolicy)
         self.connect_button.setMinimumSize(QtCore.QSize(140, 25))
         self.connect_button.setObjectName(_fromUtf8("connect_button"))
@@ -513,10 +559,12 @@ class Ui_MainWindow(object):
         self.status_button.setObjectName(_fromUtf8("status_button"))
         self.verticalLayout_2.addWidget(self.status_button)
         self.devices_button = QtGui.QPushButton(self.groupBox_8)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
+        sizePolicy = QtGui.QSizePolicy(
+            QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.devices_button.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.devices_button.sizePolicy().hasHeightForWidth())
         self.devices_button.setSizePolicy(sizePolicy)
         self.devices_button.setMinimumSize(QtCore.QSize(140, 25))
         self.devices_button.setObjectName(_fromUtf8("devices_button"))
@@ -529,19 +577,25 @@ class Ui_MainWindow(object):
         self.gridLayout_11 = QtGui.QGridLayout(self.groupBox)
         self.gridLayout_11.setObjectName(_fromUtf8("gridLayout_11"))
         self.select_al_channels_button = QtGui.QPushButton(self.groupBox)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Preferred)
+        sizePolicy = QtGui.QSizePolicy(
+            QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.select_al_channels_button.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.select_al_channels_button.sizePolicy().hasHeightForWidth())
         self.select_al_channels_button.setSizePolicy(sizePolicy)
-        self.select_al_channels_button.setObjectName(_fromUtf8("select_al_channels_button"))
-        self.gridLayout_11.addWidget(self.select_al_channels_button, 0, 0, 1, 1)
+        self.select_al_channels_button.setObjectName(
+            _fromUtf8("select_al_channels_button"))
+        self.gridLayout_11.addWidget(
+            self.select_al_channels_button, 0, 0, 1, 1)
         self.gridLayout_6.addWidget(self.groupBox, 4, 0, 1, 1)
         self.groupBox_4 = QtGui.QGroupBox(self.groupBox_2)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.MinimumExpanding, QtGui.QSizePolicy.Minimum)
+        sizePolicy = QtGui.QSizePolicy(
+            QtGui.QSizePolicy.MinimumExpanding, QtGui.QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.groupBox_4.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.groupBox_4.sizePolicy().hasHeightForWidth())
         self.groupBox_4.setSizePolicy(sizePolicy)
         self.groupBox_4.setMinimumSize(QtCore.QSize(200, 75))
         self.groupBox_4.setMaximumSize(QtCore.QSize(200, 60))
@@ -560,14 +614,14 @@ class Ui_MainWindow(object):
         self.label_29.setAlignment(QtCore.Qt.AlignCenter)
         self.label_29.setObjectName(_fromUtf8("label_29"))
         self.gridLayout_3.addWidget(self.label_29, 0, 0, 1, 1)
-        self.id_participant = QtGui.QPlainTextEdit(self.groupBox_4)
-        self.id_participant.setMinimumSize(QtCore.QSize(140, 30))
-        self.id_participant.setMaximumSize(QtCore.QSize(80, 30))
+        self.id_participante = QtGui.QPlainTextEdit(self.groupBox_4)
+        self.id_participante.setMinimumSize(QtCore.QSize(140, 30))
+        self.id_participante.setMaximumSize(QtCore.QSize(80, 30))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.id_participant.setFont(font)
-        self.id_participant.setObjectName(_fromUtf8("id_participant"))
-        self.gridLayout_3.addWidget(self.id_participant, 0, 1, 1, 1)
+        self.id_participante.setFont(font)
+        self.id_participante.setObjectName(_fromUtf8("id_participante"))
+        self.gridLayout_3.addWidget(self.id_participante, 0, 1, 1, 1)
         self.gridLayout_18.addLayout(self.gridLayout_3, 0, 0, 1, 1)
         self.gridLayout_6.addWidget(self.groupBox_4, 0, 0, 1, 1)
         self.gridLayout.addWidget(self.groupBox_2, 0, 0, 2, 1)
@@ -587,11 +641,13 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.groupBox_3, 1, 1, 1, 2)
         self.system_signal_layout = QtGui.QGroupBox(self.centralwidget)
         self.system_signal_layout.setMinimumSize(QtCore.QSize(0, 590))
-        self.system_signal_layout.setObjectName(_fromUtf8("system_signal_layout"))
+        self.system_signal_layout.setObjectName(
+            _fromUtf8("system_signal_layout"))
         self.gridLayout_8 = QtGui.QGridLayout(self.system_signal_layout)
         self.gridLayout_8.setObjectName(_fromUtf8("gridLayout_8"))
         self.signal_layout = QtGui.QGridLayout()
-        self.signal_layout.setSizeConstraint(QtGui.QLayout.SetDefaultConstraint)
+        self.signal_layout.setSizeConstraint(
+            QtGui.QLayout.SetDefaultConstraint)
         self.signal_layout.setObjectName(_fromUtf8("signal_layout"))
         self.gridLayout_8.addLayout(self.signal_layout, 0, 0, 1, 1)
         self.gridLayout.addWidget(self.system_signal_layout, 0, 1, 1, 1)
@@ -612,7 +668,8 @@ class Ui_MainWindow(object):
         self.actionExit = QtGui.QAction(MainWindow)
         self.actionExit.setObjectName(_fromUtf8("actionExit"))
         self.actionAbout_this_app = QtGui.QAction(MainWindow)
-        self.actionAbout_this_app.setObjectName(_fromUtf8("actionAbout_this_app"))
+        self.actionAbout_this_app.setObjectName(
+            _fromUtf8("actionAbout_this_app"))
         self.menuSession.addSeparator()
         self.menuSession.addAction(self.actionExit)
         self.menuAbout.addAction(self.actionAbout_this_app)
@@ -623,9 +680,12 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(_translate("MainWindow", "Empatica 4. Data acquisition Window", None))
-        self.System_value_groupbox.setTitle(_translate("MainWindow", "Valores del sistema", None))
-        self.acc_groupbox.setTitle(_translate("MainWindow", "Acceleration", None))
+        MainWindow.setWindowTitle(_translate(
+            "MainWindow", "Empatica 4. Data acquisition Window", None))
+        self.System_value_groupbox.setTitle(_translate(
+            "MainWindow", "Valores del sistema", None))
+        self.acc_groupbox.setTitle(_translate(
+            "MainWindow", "Acceleration", None))
         self.label.setText(_translate("MainWindow", "X Axis", None))
         self.label_18.setText(_translate("MainWindow", "N/A", None))
         self.label_2.setText(_translate("MainWindow", "Y Axis", None))
@@ -634,28 +694,32 @@ class Ui_MainWindow(object):
         self.label_20.setText(_translate("MainWindow", "N/A", None))
         self.label_21.setText(_translate("MainWindow", "Module", None))
         self.ACC_value.setText(_translate("MainWindow", "N/A", None))
-        self.bpm_groupbox.setTitle(_translate("MainWindow", "Beats Per Minute", None))
+        self.bpm_groupbox.setTitle(_translate(
+            "MainWindow", "Beats Per Minute", None))
         self.label_25.setText(_translate("MainWindow", "Now", None))
         self.BPM_value.setText(_translate("MainWindow", "N/A", None))
         self.label_5.setText(_translate("MainWindow", "Max.", None))
         self.label_26.setText(_translate("MainWindow", "N/A", None))
         self.label_7.setText(_translate("MainWindow", "Min.", None))
         self.label_27.setText(_translate("MainWindow", "N/A", None))
-        self.ibi_groupbox.setTitle(_translate("MainWindow", "Inter-Beat Interval", None))
+        self.ibi_groupbox.setTitle(_translate(
+            "MainWindow", "Inter-Beat Interval", None))
         self.label_24.setText(_translate("MainWindow", "Min", None))
         self.label_23.setText(_translate("MainWindow", "Max.", None))
         self.label_9.setText(_translate("MainWindow", "N/A", None))
         self.label_11.setText(_translate("MainWindow", "N/A", None))
         self.IBI_value.setText(_translate("MainWindow", "N/A", None))
         self.label_22.setText(_translate("MainWindow", "Now", None))
-        self.tmp_groupbox.setTitle(_translate("MainWindow", "Temperature", None))
+        self.tmp_groupbox.setTitle(_translate(
+            "MainWindow", "Temperature", None))
         self.label_3.setText(_translate("MainWindow", "Now", None))
         self.TMP_value.setText(_translate("MainWindow", "N/A", None))
         self.label_6.setText(_translate("MainWindow", "Max.", None))
         self.label_15.setText(_translate("MainWindow", "N/A", None))
         self.label_8.setText(_translate("MainWindow", "Min.", None))
         self.label_17.setText(_translate("MainWindow", "N/A", None))
-        self.eda_groupbox.setTitle(_translate("MainWindow", "Electro-Dermal Activity", None))
+        self.eda_groupbox.setTitle(_translate(
+            "MainWindow", "Electro-Dermal Activity", None))
         self.label_10.setText(_translate("MainWindow", "Now", None))
         self.EDA_value_2.setText(_translate("MainWindow", "N/A", None))
         self.label_12.setText(_translate("MainWindow", "Max.", None))
@@ -666,31 +730,43 @@ class Ui_MainWindow(object):
         self.EVE_value.setText(_translate("MainWindow", "N/A", None))
         self.label_28.setText(_translate("MainWindow", "Value", None))
         self.groupBox_2.setTitle(_translate("MainWindow", "Capturador", None))
-        self.groupBox_11.setTitle(_translate("MainWindow", "Selecciona los canales", None))
+        self.groupBox_11.setTitle(_translate(
+            "MainWindow", "Selecciona los canales", None))
         self.eda_button.setText(_translate("MainWindow", "EDA", None))
         self.bvp_button.setText(_translate("MainWindow", "BVP", None))
         self.ibi_button.setText(_translate("MainWindow", "I-B", None))
-        self.acc_button.setText(_translate("MainWindow", "Accelerometer", None))
+        self.acc_button.setText(_translate(
+            "MainWindow", "Accelerometer", None))
         self.tmp_button.setText(_translate("MainWindow", "Temperature", None))
         self.event_button.setText(_translate("MainWindow", "Event", None))
-        self.groupBox_9.setTitle(_translate("MainWindow", "Estado del Sistema", None))
-        self.groupBox_10.setTitle(_translate("MainWindow", "Adquisición de datos", None))
-        self.start_button_record.setText(_translate("MainWindow", "Start recording", None))
+        self.groupBox_9.setTitle(_translate(
+            "MainWindow", "Estado del Sistema", None))
+        self.groupBox_10.setTitle(_translate(
+            "MainWindow", "Adquisición de datos", None))
+        self.start_button_record.setText(
+            _translate("MainWindow", "Start recording", None))
         self.pause_button.setText(_translate("MainWindow", "Pause", None))
         self.groupBox_8.setTitle(_translate("MainWindow", "Dispositivo", None))
         self.connect_button.setText(_translate("MainWindow", "Connect", None))
         self.status_button.setText(_translate("MainWindow", "Status", None))
-        self.devices_button.setText(_translate("MainWindow", "Devices connected", None))
-        self.groupBox.setTitle(_translate("MainWindow", "Todos los canales", None))
-        self.select_al_channels_button.setText(_translate("MainWindow", "Select all channels", None))
-        self.groupBox_4.setTitle(_translate("MainWindow", "Participante", None))
+        self.devices_button.setText(_translate(
+            "MainWindow", "Devices connected", None))
+        self.groupBox.setTitle(_translate(
+            "MainWindow", "Todos los canales", None))
+        self.select_al_channels_button.setText(
+            _translate("MainWindow", "Select all channels", None))
+        self.groupBox_4.setTitle(_translate(
+            "MainWindow", "Participante", None))
         self.label_29.setText(_translate("MainWindow", "ID", None))
-        self.groupBox_3.setTitle(_translate("MainWindow", "Mensajes del sistema", None))
+        self.groupBox_3.setTitle(_translate(
+            "MainWindow", "Mensajes del sistema", None))
         self.SYS_value.setText(_translate("MainWindow", "N/A", None))
-        self.system_signal_layout.setTitle(_translate("MainWindow", "Señales fisiologicas", None))
+        self.system_signal_layout.setTitle(_translate(
+            "MainWindow", "Señales fisiologicas", None))
         self.menuSession.setTitle(_translate("MainWindow", "Session", None))
         self.menuAbout.setTitle(_translate("MainWindow", "About", None))
-        self.actionNew_session.setText(_translate("MainWindow", "New session", None))
+        self.actionNew_session.setText(
+            _translate("MainWindow", "New session", None))
         self.actionExit.setText(_translate("MainWindow", "Exit", None))
-        self.actionAbout_this_app.setText(_translate("MainWindow", "About this app....", None))
-
+        self.actionAbout_this_app.setText(_translate(
+            "MainWindow", "About this app....", None))
