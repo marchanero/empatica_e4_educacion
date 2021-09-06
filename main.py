@@ -3,7 +3,7 @@ import main_designer3
 import sys
 import multiprocessing
 from PyQt4 import QtGui, QtCore
-from PyQt4.QtGui import *
+#from PyQt4.QtGui import *
 import datetime
 from collections import deque
 import socket
