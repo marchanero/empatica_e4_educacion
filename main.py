@@ -74,8 +74,8 @@ def empaticaconnection(queue, queue2):
             connected = True
             #mac = 'B404BC' #Pulsera de Arturo
             #mac = '7E9418'  # Pulsera Rober
-            #mac = '09048A' #pulsera de Alvaro 2
-            mac = '1C14C6' #pulsera de Alvaro 1
+            mac = '09048A' #pulsera de Alvaro 2
+            #mac = '1C14C6' #pulsera de Alvaro 1
             queue.put('R canal_comunicaciones OK\n')
             break
         except socket.timeout:
