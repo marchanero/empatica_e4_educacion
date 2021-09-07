@@ -211,7 +211,7 @@ class MyMainWindow(QtGui.QMainWindow, main_designer3.Ui_MainWindow):
         # TIMER DEL UPDATE DE PARAMETROS
         self.timer2 = pg.QtCore.QTimer()
         self.timer2.timeout.connect(self.update_params)
-        self.timer2.start(2000)
+        self.timer2.start(500)
 
 
         ##################################################################################
@@ -606,31 +606,24 @@ class MyMainWindow(QtGui.QMainWindow, main_designer3.Ui_MainWindow):
                 data = data.split(' ')
                 self.process_data[data[0]](data)  # gestionado a traves de un dictionary
         except Exception as inst:  # no hay elementos que sacar de la cola
+            #print(inst.message)
             pass
     #
     def update_params(self):
         return 0
     #
-    #     # TODO: Parecec ser que es mucho mas eficjente hacer un ring loop con numpy que con deque.
-    #
-    #     if self.eda_datay:
-    #         last_eda = self.eda_datay[-1]
-    #         self.EDA_value_2.setText(str(round(last_eda, 2)) + ' uS')
-    #
-    #     if self.ibi_datay:
-    #         last_ibi = self.ibi_datay[-1]
-    #         self.IBI_value.setText(str(round(last_ibi, 2)) + ' s')
-    #         self.BPM_value.setText(str(round(60 / last_ibi, 2)) + ' bpm')
-    #
-    #     if self.acc_datax:
-    #         last_acc = math.sqrt(self.acc_datax[-1] ** 2 + self.acc_datay[-1] ** 2 +
-    #                              self.acc_datax[-1] ** 2)
-    #         self.ACC_value.setText(str(round(last_acc, 2)) + ' m/s^2')
-    #
-    #     if self.tmp_datay:
-    #         last_tmp = self.tmp_datay[-1]
-    #         self.TMP_value.setText(str(round(last_tmp, 2)) + "g")
-    #
+    def max_value(self, value):
+        init=0
+        if value >= init:
+            value = init
+        return value
+
+    def min_value(self, value):
+        init=0
+        if value <= init:
+            value = init
+        return value
+
 
 
 
@@ -658,6 +651,7 @@ class MyMainWindow(QtGui.QMainWindow, main_designer3.Ui_MainWindow):
             d += '0'
         self.eda_time.append(int(d))  # storing data on eda_time
         f = data[2][0:-2].replace(',', '.')
+        self.EDA_value_2.setText(f)
         self.eda_datay.append(float(f))  # storing eda value on eda_datay
         self.curve1.setData(x=list(self.eda_time), y=list(self.eda_datay))  # plotting
         self.eda_file.write(d + ';' + f + '\n')  # recording eda value on file
@@ -669,9 +663,10 @@ class MyMainWindow(QtGui.QMainWindow, main_designer3.Ui_MainWindow):
         d = int(d)
         self.ibi_time.append(d)
         self.ibi_datay.append(float(data[2][0:-2].replace(',', '.')))
-        print("Date_epoch=" + str(d) + " Valor de ib = " + data[2])
         self.ibi_file.write(str(d) + ';' + data[2] + '\n')
         self.curve2.setData(x=list(self.ibi_time), y=list(self.ibi_datay))
+        print("Date_epoch=" + str(d) + " Valor de ib = " + data[2])
+        self.IBI_value.setText(data[2])
 
     def update_BVP_data(self, data):
         d = data[1].replace(',', '')
@@ -679,6 +674,7 @@ class MyMainWindow(QtGui.QMainWindow, main_designer3.Ui_MainWindow):
             d += '0'
         self.bvp_time.append(int(d))
         f = data[2][0:-2].replace(',', '.')
+        self.BPM_value.setText(f)
         self.bvp_datay.append(float(f))
         self.curve3.setData(x=list(self.bvp_time), y=list(self.bvp_datay))
         self.bvp_file.write(d + ';' + f + '\n')  # recording bvp value on file
@@ -693,7 +689,9 @@ class MyMainWindow(QtGui.QMainWindow, main_designer3.Ui_MainWindow):
         self.acc_datax.append(int(data[2]))
         self.acc_datay.append(int(data[3]))
         self.acc_dataz.append(int(data[4][0:-2]))
-
+        self.acc_x_value.setText(data[2]) #xvalue
+        self.acc_y_value.setText(data[3]) #yvalue
+        self.acc_z_value.setText(data[4][0:-2])
         self.curve4.setData(x=list(self.acc_time), y=list(self.acc_datax))
         self.curve5.setData(x=list(self.acc_time), y=list(self.acc_datay))
         self.curve6.setData(x=list(self.acc_time), y=list(self.acc_dataz))
@@ -704,10 +702,10 @@ class MyMainWindow(QtGui.QMainWindow, main_designer3.Ui_MainWindow):
         while len(d) < 16:  # a veces el timestamp viene con un numero distinto de decimales. Hay que normalizar a 16
             d += '0'
         d = int(d)
-
         self.tmp_time.append(d)
         self.tmp_datay.append(float(data[2][0:-2].replace(',', '.')))
         self.curve7.setData(x=list(self.tmp_time), y=list(self.tmp_datay))
+        self.TMP_value.setText(data[2])
         self.tmp_file.write(str(d) + ';' + str(data[2]) + '\n')
 
 
