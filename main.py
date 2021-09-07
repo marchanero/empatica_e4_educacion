@@ -3,7 +3,8 @@ import main_designer3
 import sys
 import multiprocessing
 from PyQt4 import QtGui, QtCore
-#from PyQt4.QtGui import *
+from PyQt4.QtCore import SIGNAL
+
 import datetime
 from collections import deque
 import socket
@@ -289,7 +290,7 @@ class MyMainWindow(QtGui.QMainWindow, main_designer3.Ui_MainWindow):
         self.p = multiprocessing.Process(target=empaticaconnection, args=(self.queue, self.queue2))
         self.p.start()
 
-
+        #self.show()
 
         # CANVAS DEL EDA
     def canvas_eda(self):
@@ -737,9 +738,9 @@ class MyMainWindow(QtGui.QMainWindow, main_designer3.Ui_MainWindow):
 
 
 if __name__ == "__main__":
+    multiprocessing.freeze_support()
     app = QtGui.QApplication(sys.argv)
     ui = MyMainWindow()
     #ui = seleccion_paciente()
-    multiprocessing.freeze_support()
     ui.show()
     sys.exit(app.exec_())
